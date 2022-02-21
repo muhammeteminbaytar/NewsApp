@@ -18,6 +18,7 @@ class RecyclerAdapter(private val articlesList:List<ArticlesModel>):RecyclerView
      }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+
             holder.binding.listItem=articlesList[position]
     }
 

@@ -21,21 +21,22 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.Navigation
 
 class HomeFragment : Fragment() {
 
     private lateinit var binding:FragmentHomeBinding
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        (activity as AppCompatActivity?)?.supportActionBar?.hide()
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         loadData()
         binding= FragmentHomeBinding.inflate(inflater,container,false)
         return binding.root
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        (activity as AppCompatActivity).setSupportActionBar(binding.homeToolbar)
+        viewEvent()
     }
 
     private fun loadData(){
@@ -55,9 +56,6 @@ class HomeFragment : Fragment() {
                     response.body()?.let {
                         binding.recyclerHome.layoutManager=LinearLayoutManager(view?.context)
                         binding.recyclerHome.adapter=RecyclerAdapter(it.articles)
-                        for (i in it.articles){
-                            println(i.title)
-                        }
                     }
                 }
              }
@@ -68,9 +66,11 @@ class HomeFragment : Fragment() {
                 }
 
         })
-
     }
 
-
-
+    private fun viewEvent(){
+        binding.imgProfile.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.homeTOprofile)
+        }
+    }
 }
