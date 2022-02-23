@@ -16,6 +16,9 @@
         <action
             android:id="@+id/homeTOprofile"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/homeTOdetail"
+            app:destination="@id/detailNewsFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginTOregister"
@@ -33,7 +36,9 @@
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/loginTOprofile"
-            app:destination="@id/profileFragment" />
+            app:destination="@id/profileFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/loginTOregister" />
@@ -45,6 +50,29 @@
         tools:layout="@layout/fragment_profile">
         <action
             android:id="@+id/profilTOlogin"
-            app:destination="@id/loginFragment" />
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/profileFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailNewsFragment"
+        android:name="com.example.newsapp.view.DetailNewsFragment"
+        android:label="DetailNewsFragment"
+        tools:layout="@layout/fragment_detail_news">
+        <argument
+            android:name="title"
+            app:argType="string"
+            android:defaultValue="Başlık Yok" />
+        <argument
+            android:name="date"
+            app:argType="string"
+            android:defaultValue="Tarih Belirtilmedi" />
+        <argument android:name="description"
+            app:argType="string"
+            android:defaultValue="Açıklama Yok" />
+        <argument
+            android:name="image"
+            app:argType="string"
+            android:defaultValue="Resim Yok" />
     </fragment>
 </navigation>
