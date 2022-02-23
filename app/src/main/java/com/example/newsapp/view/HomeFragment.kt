@@ -22,14 +22,19 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class HomeFragment : Fragment() {
 
+    private lateinit var auth: FirebaseAuth
     private lateinit var binding:FragmentHomeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         loadData()
+        auth = Firebase.auth
         binding= FragmentHomeBinding.inflate(inflater,container,false)
         return binding.root
     }
@@ -70,7 +75,11 @@ class HomeFragment : Fragment() {
 
     private fun viewEvent(){
         binding.imgProfile.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.homeTOprofile)
+            if (auth.currentUser==null){
+                Navigation.findNavController(it).navigate(R.id.homeTOlogin)
+            }else{
+                Navigation.findNavController(it).navigate(R.id.homeTOprofile)
+            }
         }
     }
 }
