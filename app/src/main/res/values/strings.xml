@@ -2,4 +2,42 @@
     <string name="app_name">HavarNews</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="clicentID">747799033875-jdrf39c1c7rc3qt0inc7stpucdlaepmv.apps.googleusercontent.com</string>
+
+    <string name="facebook_app_id">1234</string>
+    <string name="fb_login_protocol_scheme">fb1234</string>
+    <string name="facebook_client_token">56789</string>
+    <string name="newsApiKey">506272ef6b1d4fb1b2844d4fbc7d3dd6</string>
+    <string name="Base_Url">https://newsapi.org/v2/</string>
+
+    <string name="emptyArea">Alanlar tam doldurulmalıdır!</string>
+    <string name="notFoundAcc">Hesap Bulunamdı!</string>
+    <string name="notConnectionFacebook">Facebook Bağlanmadı</string>
+    <string name="registerSuccess">Facebook Bağlanmadı</string>
+    <string name="succes">Başarılı</string>
+
+    <!--register fragment-->
+    <string name="email">Email</string>
+    <string name="nameANDsurname">İsim - Soyisim</string>
+    <string name="password">Şifre</string>
+    <string name="register">Kayıt Ol</string>
+
+    <!--profile fragment-->
+    <string name="profileTxtName">Name :</string>
+    <string name="profileTxtEmail">Email :</string>
+    <string name="profileTxtLogout">Çıkış</string>
+
+    <!--login fragment-->
+    <string name="loginHintEmail">Email</string>
+    <string name="loginHintPass">Şifre</string>
+    <string name="loginBtnLogin">Giriş Yap</string>
+    <string name="loginOrAccountConnection">veya hesabınızla giriş yapın</string>
+    <string name="loginHaventAccount">Hesabınız yok mu?</string>
+    <string name="loginTxtMakeUser">Üye Ol</string>
+
+    <!--detail fragment-->
+    <string name="detailBtnReadAllNews">Haberin Tamamını Oku</string>
+
+    <!--about us fragment-->
+    <string name="aboutus">Örnek proje amaçlı yapılmış bir haber uygulamasıdır.</string>
 </resources>

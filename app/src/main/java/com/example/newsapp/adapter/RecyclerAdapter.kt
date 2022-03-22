@@ -25,4 +25,4 @@ class RecyclerAdapter(private val articlesList:List<ArticlesModel>,val clickList
             return articlesList.size
         }
 }
-class ViewHolder(val binding: CardLayoutBinding):RecyclerView.ViewHolder(binding.root){}
+class ViewHolder(val binding: CardLayoutBinding):RecyclerView.ViewHolder(binding.root)

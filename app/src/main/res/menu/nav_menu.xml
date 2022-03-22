@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:title="Anasayfa"
+        android:icon="@drawable/ic_home"/>
+    <item
+        android:id="@+id/profilFragment"
+        android:title="Profil"
+        android:icon="@drawable/ic_person"/>
+
+    <item android:title="Filtreler">
+        <menu>
+            <item
+                android:id="@+id/country"
+                android:title="Ülke"
+                android:icon="@drawable/ic_country"/>
+        </menu>
+    </item>
+
+    <item android:title="Diğer Seçenekler">
+        <menu>
+            <item
+                android:id="@+id/AboutUsFragment"
+                android:title="Hakkımızda"
+                android:icon="@drawable/ic_about"/>
+        </menu>
+    </item>
+
+</menu>

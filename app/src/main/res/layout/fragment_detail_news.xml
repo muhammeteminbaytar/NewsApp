@@ -5,12 +5,12 @@
     <data>
         <variable
             name="detailNewsFrg"
-            type="com.example.newsapp.view.DetailNewsFragment" />
+            type="com.example.newsapp.ui.component.details.DetailNewsFragment" />
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.DetailNewsFragment">
+    tools:context=".ui.component.details.DetailNewsFragment">
 
 
     <ScrollView
@@ -43,7 +43,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="8dp"
-                android:text="Title"
+                tools:text="Title"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -80,7 +80,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
-                android:text="Haberin Tamamını Oku"
+                android:text="@string/detailBtnReadAllNews"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

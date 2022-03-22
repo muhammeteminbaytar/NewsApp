@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.newsapp.view.HomeFragment"
+        android:name="com.example.newsapp.ui.component.news.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -15,48 +15,53 @@
             app:destination="@id/loginFragment" />
         <action
             android:id="@+id/homeTOprofile"
-            app:destination="@id/profileFragment" />
+            app:destination="@id/loginFragment" />
         <action
             android:id="@+id/homeTOdetail"
             app:destination="@id/detailNewsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/loginTOregister"
-        android:name="com.example.newsapp.view.RegisterFragment"
+        android:id="@+id/registerFragment"
+        android:name="com.example.newsapp.ui.component.register.RegisterFragment"
         android:label="RegisterFragment"
         tools:layout="@layout/fragment_register">
         <action
             android:id="@+id/registerTOprofil"
-            app:destination="@id/profileFragment" />
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.newsapp.view.LoginFragment"
+        android:name="com.example.newsapp.ui.component.login.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/loginTOprofile"
-            app:destination="@id/profileFragment"
+            app:destination="@id/profilFragment"
             app:popUpTo="@id/loginFragment"
             app:popUpToInclusive="true" />
         <action
-            android:id="@+id/action_loginFragment_to_registerFragment"
-            app:destination="@id/loginTOregister" />
+            android:id="@+id/loginTOregister"
+            app:destination="@id/registerFragment" />
     </fragment>
     <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.example.newsapp.view.ProfileFragment"
+        android:id="@+id/profilFragment"
+        android:name="com.example.newsapp.ui.component.profile.ProfileFragment"
         android:label="ProfileFragment"
         tools:layout="@layout/fragment_profile">
+
         <action
             android:id="@+id/profilTOlogin"
             app:destination="@id/loginFragment"
-            app:popUpTo="@id/profileFragment"
+            app:popUpTo="@id/profilFragment"
             app:popUpToInclusive="true" />
+        <argument
+            android:name="loginType"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
     <fragment
         android:id="@+id/detailNewsFragment"
-        android:name="com.example.newsapp.view.DetailNewsFragment"
+        android:name="com.example.newsapp.ui.component.details.DetailNewsFragment"
         android:label="DetailNewsFragment"
         tools:layout="@layout/fragment_detail_news">
         <argument
@@ -74,5 +79,19 @@
             android:name="image"
             app:argType="string"
             android:defaultValue="Resim Yok" />
+    </fragment>
+    <fragment
+        android:id="@+id/AboutUsFragment"
+        android:name="com.example.newsapp.ui.component.aboutus.AboutUsFragment"
+        android:label="fragment_about_us"
+        tools:layout="@layout/fragment_about_us">
+        <deepLink
+            app:action="android.intent.action.MY_ACTION"
+            app:mimeType="type/subtype"
+            app:uri="example.com/havarnews/about" />
+        <argument
+            android:name="name"
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
 </navigation>
