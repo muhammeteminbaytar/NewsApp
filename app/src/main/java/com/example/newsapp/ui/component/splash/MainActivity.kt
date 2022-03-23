@@ -12,14 +12,19 @@ class MainActivity : BaseActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val mainintent= Intent(this@MainActivity, HomeActivity::class.java)
+
+        if (intent.data?.toString()!=null) {
+            println(intent.data.toString())
+            mainintent.putExtra("deeplinkopen",true)
+       }
+
         supportActionBar?.hide()
         val timer = object: CountDownTimer(2500,2500) {
             override fun onTick(p0: Long) {
             }
-
             override fun onFinish() {
-                val intent= Intent(this@MainActivity, HomeActivity::class.java)
-                startActivity(intent)
+                startActivity(mainintent)
                 finish()
             }
         }

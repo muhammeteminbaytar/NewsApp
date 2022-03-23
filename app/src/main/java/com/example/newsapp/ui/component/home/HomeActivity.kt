@@ -5,7 +5,6 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.example.newsapp.R
@@ -31,6 +30,7 @@ class HomeActivity : BaseActivity() {
 
         binding.navView.inflateHeaderView(R.layout.navigation_header)
         navController()
+        deeplinkController()
 
         viewModel=ViewModelProvider(this)[HomeActViewModel::class.java]
     }
@@ -42,6 +42,11 @@ class HomeActivity : BaseActivity() {
                 R.id.AboutUsFragment->connectFragment(AboutUsFragment(),binding)
             }
             true
+        }
+    }
+    private fun deeplinkController(){
+        if(intent.getBooleanExtra("deeplinkopen",false)){
+            connectFragment(AboutUsFragment(),binding)
         }
     }
 

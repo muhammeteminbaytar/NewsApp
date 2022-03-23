@@ -84,10 +84,5 @@
         android:id="@+id/AboutUsFragment"
         android:name="com.example.newsapp.ui.component.aboutus.AboutUsFragment"
         android:label="fragment_about_us"
-        tools:layout="@layout/fragment_about_us">
-        <deepLink
-            app:action="android.intent.action.MY_ACTION"
-            app:mimeType="type/subtype"
-            app:uri="example.com/havarnews/about" />
-    </fragment>
+        tools:layout="@layout/fragment_about_us"/>
 </navigation>
