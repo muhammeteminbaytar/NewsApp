@@ -11,6 +11,7 @@ import com.example.newsapp.R
 import com.example.newsapp.databinding.ActivityHomeBinding
 import com.example.newsapp.ui.base.BaseActivity
 import com.example.newsapp.ui.component.aboutus.AboutUsFragment
+import com.example.newsapp.ui.component.news.HomeFragment
 import com.example.newsapp.ui.component.profile.ProfileFragment
 import com.example.newsapp.util.CustomCountryClass
 
@@ -36,10 +37,22 @@ class HomeActivity : BaseActivity() {
     }
     private fun navController(){
         binding.navView.setNavigationItemSelectedListener {
-            when(it.itemId){
-                R.id.country-> countrySelect()
-                R.id.profilFragment-> connectFragment(ProfileFragment(),binding)
-                R.id.AboutUsFragment->connectFragment(AboutUsFragment(),binding)
+            when (it.itemId) {
+                R.id.country -> {
+                    countrySelect()
+                }
+                R.id.profilFragment -> {
+                    connectFragment(ProfileFragment(),binding)
+                    it.isChecked = true
+                }
+                R.id.homeFragment -> {
+                    connectFragment(HomeFragment(),binding)
+                    it.isChecked = true
+                }
+                else -> {
+                    connectFragment(AboutUsFragment(),binding)
+                    it.isChecked = true
+                }
             }
             true
         }
