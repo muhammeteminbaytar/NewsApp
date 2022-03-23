@@ -22,29 +22,29 @@ class CustomCountryClass: DialogFragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-            var rootView:View=inflater.inflate(R.layout.country_custom_dialog,container,false)
-            recylerControl(rootView)
+    ): View {
+            val rootView:View=inflater.inflate(R.layout.country_custom_dialog,container,false)
+            recyclerControl(rootView)
             return rootView
     }
 
-    private fun recylerControl(rootView:View){
+    private fun recyclerControl(rootView:View){
         rvCountry=rootView.findViewById(R.id.rv_country)
         rvCountry.layoutManager= GridLayoutManager(context,2)
         countryAdapter = CountryAdapter(requireContext()){
-            recylerClick(it)
+            recyclerClick(it)
         }
         rvCountry.adapter=countryAdapter
-        listCreater()
+        listCrater()
     }
-    private fun recylerClick(data:CountryModel){
+    private fun recyclerClick(data:CountryModel){
         val result=data.countryName
         requireActivity().supportFragmentManager.setFragmentResult("requestKey", bundleOf("bundleKey" to result))
         dialog?.cancel()
     }
 
 
-    private fun listCreater(){
+    private fun listCrater(){
 
         dataList.add(CountryModel(R.drawable.ae,"ae"))
         dataList.add(CountryModel(R.drawable.ar,"ar"))

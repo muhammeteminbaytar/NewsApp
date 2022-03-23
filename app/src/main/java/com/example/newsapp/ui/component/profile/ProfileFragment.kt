@@ -1,16 +1,13 @@
 package com.example.newsapp.ui.component.profile
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
-import com.example.newsapp.R
-import com.example.newsapp.ui.base.BaseFragment
 import com.example.newsapp.databinding.FragmentProfileBinding
+import com.example.newsapp.ui.base.BaseFragment
 import com.example.newsapp.ui.component.login.LoginFragment
-import com.example.newsapp.ui.component.register.RegisterViewModel
 
 
 class ProfileFragment : BaseFragment() {
@@ -21,7 +18,7 @@ class ProfileFragment : BaseFragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding= FragmentProfileBinding.inflate(inflater,container,false)
             return binding.root
     }

@@ -14,10 +14,10 @@ class NewsViewModel:BaseViewModel() {
 
     var newsData=MutableLiveData<List<ArticlesModel>>()
     var country=MutableLiveData<String>()
-    var catagory=MutableLiveData<String>()
+    var category=MutableLiveData<String>()
     init {
         country=MutableLiveData("tr")
-        catagory=MutableLiveData("general")
+        category =MutableLiveData("general")
     }
 
     fun loadData(countryID:String,category:String,baseUrl:String,apiKey:String){
@@ -41,7 +41,7 @@ class NewsViewModel:BaseViewModel() {
         })
     }
 
-    fun createCatagoryList(): List<CatagoryModel> {
+    fun createCategoryList(): List<CatagoryModel> {
         return mutableListOf(
             CatagoryModel("general"),
             CatagoryModel("business"),

@@ -89,9 +89,5 @@
             app:action="android.intent.action.MY_ACTION"
             app:mimeType="type/subtype"
             app:uri="example.com/havarnews/about" />
-        <argument
-            android:name="name"
-            app:argType="string"
-            app:nullable="true" />
     </fragment>
 </navigation>

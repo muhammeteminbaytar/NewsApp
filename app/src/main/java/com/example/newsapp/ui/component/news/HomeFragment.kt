@@ -9,18 +9,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.newsapp.R
 import com.example.newsapp.adapter.RecyclerAdapter
 import com.example.newsapp.databinding.FragmentHomeBinding
-import com.example.newsapp.model.NewsModel
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import com.example.newsapp.adapter.CatagoryAdapter
 import com.example.newsapp.ui.base.BaseFragment
 import com.example.newsapp.model.ArticlesModel
 import com.example.newsapp.model.CatagoryModel
-import com.example.newsapp.service.NewsCall
 
 class HomeFragment : BaseFragment() {
 
@@ -28,7 +21,7 @@ class HomeFragment : BaseFragment() {
     private lateinit var viewModel:NewsViewModel
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         initView()
         getFilterData()
         catchCountryData()
@@ -38,7 +31,7 @@ class HomeFragment : BaseFragment() {
     }
     private fun getFilterData(){
         viewModel.country.observe(this,{country->
-            viewModel.catagory.observe(this,{catagory->
+            viewModel.category.observe(this,{ catagory->
                 frgLoadData(country,catagory)
             })
         })
@@ -49,7 +42,7 @@ class HomeFragment : BaseFragment() {
     private fun catchCountryData(){
       requireActivity().supportFragmentManager.setFragmentResultListener("requestKey",viewLifecycleOwner){ requestKey, bundle ->
                 val result=bundle.getString("bundleKey")
-                viewModel.catagory.observe(this,{
+                viewModel.category.observe(this,{
                     frgLoadData(result.toString(),it)
                 })
                     viewModel.country.value=result.toString()
@@ -58,15 +51,15 @@ class HomeFragment : BaseFragment() {
 
     private fun categoryRecylerControl(){
         binding.recylerCatagory.layoutManager=LinearLayoutManager(view?.context,LinearLayoutManager.HORIZONTAL,false)
-        binding.recylerCatagory.adapter=CatagoryAdapter(viewModel.createCatagoryList()){
+        binding.recylerCatagory.adapter=CatagoryAdapter(viewModel.createCategoryList()){
             catagoryClick(it)
         }
     }
 
     private fun catagoryClick(data:CatagoryModel){
-        viewModel.catagory.value=data.catagoryName
+        viewModel.category.value=data.catagoryName
         viewModel.country.observe(this,{country->
-            viewModel.catagory.observe(this,{catagory->
+            viewModel.category.observe(this,{ catagory->
                 frgLoadData(country,catagory)
             })
         })

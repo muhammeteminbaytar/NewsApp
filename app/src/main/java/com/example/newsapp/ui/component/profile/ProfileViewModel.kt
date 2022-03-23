@@ -12,7 +12,7 @@ class ProfileViewModel:BaseViewModel() {
      fun getFirestoreData(){
         with(FirebaseRepository()){
             getFirebaseFirestore().collection("users").whereEqualTo("userID",getFirebaseAuth().currentUser?.uid)
-            .addSnapshotListener { value, error ->
+            .addSnapshotListener { value, _ ->
                 name.value= value?.documents?.get(0)?.get("name").toString()
             }
         }

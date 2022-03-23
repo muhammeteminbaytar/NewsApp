@@ -1,16 +1,9 @@
 package com.example.newsapp.ui.component.login
 
 import android.app.Activity
-import android.content.ContentValues
-import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
-import com.example.newsapp.R
 import com.example.newsapp.data.FirebaseRepository
 import com.example.newsapp.ui.base.BaseViewModel
-import com.facebook.AccessToken
-import com.google.firebase.auth.FacebookAuthProvider
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 
 

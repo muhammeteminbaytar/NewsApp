@@ -1,7 +1,6 @@
 package com.example.newsapp.ui.component.splash
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.os.CountDownTimer
 import com.example.newsapp.R
