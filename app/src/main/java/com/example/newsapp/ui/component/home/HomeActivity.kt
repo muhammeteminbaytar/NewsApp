@@ -37,21 +37,20 @@ class HomeActivity : BaseActivity() {
     }
     private fun navController(){
         binding.navView.setNavigationItemSelectedListener {
+            it.isChecked = true
+
             when (it.itemId) {
                 R.id.country -> {
                     countrySelect()
                 }
                 R.id.profilFragment -> {
                     connectFragment(ProfileFragment(),binding)
-                    it.isChecked = true
                 }
-                R.id.homeFragment -> {
-                    connectFragment(HomeFragment(),binding)
-                    it.isChecked = true
+                R.id.AboutUsFragment -> {
+                    connectFragment(AboutUsFragment(),binding)
                 }
                 else -> {
-                    connectFragment(AboutUsFragment(),binding)
-                    it.isChecked = true
+                    connectFragment(HomeFragment(),binding)
                 }
             }
             true

@@ -6,12 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.newsapp.R
 import com.example.newsapp.model.CountryModel
 
-        class CountryAdapter(var context: Context,val clickListener:(CountryModel)->Unit): RecyclerView.Adapter<CountryAdapter.ViewHolder>() {
+class CountryAdapter(var context: Context,val clickListener:(CountryModel)->Unit): RecyclerView.Adapter<CountryAdapter.ViewHolder>() {
 
     var dataList = emptyList<CountryModel>()
 

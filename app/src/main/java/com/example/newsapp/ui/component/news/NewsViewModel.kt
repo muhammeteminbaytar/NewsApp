@@ -10,7 +10,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class NewsViewModel:BaseViewModel() {
+class  NewsViewModel:BaseViewModel() {
 
     var newsData=MutableLiveData<List<ArticlesModel>>()
     var country=MutableLiveData<String>()
